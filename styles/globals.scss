@@ -1,0 +1,256 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.5s;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #f36870;
+  color: rgb(255, 255, 255);
+  h1 {
+    margin: 20px auto 20px 20px;
+    cursor: pointer;
+  }
+  a {
+    margin: 20px;
+    transition: all 0.2s;
+    font-weight: bolder;
+    max-height: 70px;
+    &:hover {
+      color: #f36870;
+      transform: scale(1.2);
+      background: white;
+      padding: 20px;
+      margin: 0;
+    }
+  }
+}
+.stickynav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.stickynav + main {
+  margin-top: 78px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .links {
+    width: 100%;
+    background: #fff5d7;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    a {
+      margin: 10px;
+      transition: all 0.2s;
+      &:hover {
+        color: #f36870;
+        transform: scale(1.2);
+      }
+    }
+  }
+  .copyright {
+    width: 100%;
+    background: #ffbf90;
+    padding: 10px;
+  }
+}
+
+.mobilenav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #f36870;
+  color: white;
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    height: 100%;
+    padding: 20px;
+    &:hover {
+      background: white;
+      color: #f36870;
+    }
+  }
+}
+
+main {
+  min-height: calc(100vh - 228px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("https://i.ibb.co/F7my9xH/pexels-pavel-danilyuk-5789591.jpg")
+    #f3686f8c;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: saturation;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #ffffff;
+  width: 100%;
+  padding: 40px;
+  max-width: 1000px;
+  background: #ffffffc2;
+  &__description {
+    padding: 30px;
+    h1 {
+      color: black;
+    }
+    h2 {
+      color: #ffa25f;
+    }
+    h3 {
+      color: rgb(87, 86, 86);
+    }
+    p {
+      color: rgb(63, 63, 63);
+    }
+  }
+  &__action {
+    button {
+      margin-right: 10px !important;
+      padding: 10px;
+      margin: 5px 0;
+      font-size: larger;
+      border: 1px solid #f36870;
+      background-color: #f36870;
+      color: white;
+      &:hover {
+        color: black;
+        border: 1px solid #ffbf90;
+        background-color: #ffbf90;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  &__image {
+    height: 400px;
+  }
+}
+
+.container {
+  height: 100%;
+}
+
+.contactform {
+  background: #fff5d7;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  box-shadow: 10px 5px 5px #c9c9c9;
+  border-radius: 5px;
+  input,
+  textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    font-size: large;
+    border-radius: 5px;
+    resize: none;
+    &:focus {
+      outline: 2px solid #ffbf90;
+    }
+  }
+  button {
+    padding: 10px;
+    margin: 5px 0;
+    font-size: larger;
+    border: 1px solid #ffbf90;
+    border-radius: 5px;
+    background-color: #ffbf90;
+    &:hover {
+      border: 1px solid #f36870;
+      color: white;
+      background-color: #f36870;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  input {
+    margin: 20px;
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    border: 2px solid #ffbf90;
+  }
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #ffffffb0;
+    border-radius: 5px;
+    margin: 40px;
+    .card {
+      display: flex;
+      flex-direction: column;
+      background-color: #fff5d7;
+      //padding: 20px;
+      border-radius: 5px;
+      margin: 15px;
+      cursor: pointer;
+      box-shadow: 10px 5px 5px #c9c9c9;
+      img {
+        height: 170px;
+        width: 170px;
+        // border: 1px solid #f36870;
+      }
+      h4 {
+        padding: 10px;
+      }
+      transition: all 0.2s;
+      &:hover {
+        color: #f36870;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

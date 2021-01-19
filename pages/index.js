@@ -1,65 +1,54 @@
+// import { useEffect, useState } from 'react'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-
+import { useRouter } from 'next/router'
+import Layout from '../components/Layouts/Layout'
+import styles from '../styles/Home.module.scss'
+// import axios from 'axios'
 export default function Home() {
+  const router = useRouter()
+  // const [products, setProducts] = useState([])
+  // const [idx, setidx] = useState(0)
+  // const getProducts = async () => {
+  //   try {
+  //     const { data } = await axios.get('/api/products');
+  //     setProducts(data)
+  //   } catch (error) {
+  //     console.log(error.message)
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   getProducts()
+  // }, [])
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setidx(Number(Math.floor(Math.random() * (products?.length - 1))))
+  //   }, 5000);
+  //   return () => clearInterval(interval);
+  // }, [])
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Outline Jutes</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <div className="cta">
+        <div className="cta__description">
+          <h1>Welcome to Outline Jutes</h1>
+          <h3>We provide with high quality jute products from Bangladesh. These jute products are 100% bio degradable in eco-friendly.</h3>
+          <div className="cta__action">
+            <button onClick={() => router.push('/products')}>Browse our products</button>
+            <button onClick={() => router.push('/contact')}>Contact us</button>
+          </div>
+          <h2>Lets contribute to a greater future.</h2>
+          <p>Plastic and polythene has done their part in harming the environment for decades. It is time to switch to a more eco-friendly solution. Jute products are produced from natural jute fibres which are bio degradable, eco-friendly and safe to dispose.</p>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+        {/* <img className="cta__image" src={`${products[idx]?.link}`} alt="" /> */}
+      </div>
     </div>
   )
 }
+
+Home.Layout = Layout;
